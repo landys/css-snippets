@@ -1,0 +1,75 @@
+$icon-size-small-width: 19px;
+$icon-size-small-height: 17px;
+
+$icon-size-big-width: 36px;
+$icon-size-big-height: 36px;
+
+$image-root: "../images/";
+
+// colors
+$color-white: #ffffff;
+// text colors
+$color-text-default: #444444;
+$color-text-gray: #888888;
+$color-text-dark: #333333;
+$color-text-secondary: #555555;
+$color-text-light-gray: #bebebe;
+$color-text-disabled: #d5d5d5;
+$color-text-blue: #6c8ae2;
+$color-text-warning-red: #f85800;
+$color-text-red: #ff711b;
+$color-text-assertive: #ff711b;
+$color-text-orange: #ffa404;
+
+// background/border colors
+$color-bg-gray: #f0f0f2;
+$color-bg-default: $color-bg-gray;
+$color-bg-orange: #fdc37f;
+$color-bg-dark-blue: #5a79cb;
+$color-bg-blue: #6e93eb;
+$color-bg-light-blue: #93b8ff;
+$color-bg-light: #d5d5d5;
+$color-bg-light-2: #dbdbdb;
+$color-bg-lighter: #eeeeee;
+$color-bg-warning-yellow: #fff391;
+$color-bg-yellow: #feca5a;
+$color-bg-yellow-2: #ffb200;
+$color-bg-yellow-3: #ffc349;
+$color-bg-assertive: #ffbe24;
+
+// others
+$color-warning: #fff9f9;
+
+$color-button-bottom-shadow: #3e74c5;
+
+$transition-speed: 0.1s;
+
+$border-color: #d8d7dc;
+
+// list padding on left/right
+$edge-padding: 14px;
+
+// footer height
+$action-footer-height: 47px;
+
+$nav-tab-height: 49px;
+
+$mine-tab-height: 38px;
+
+$school-tab-height: 44px;
+
+// event list
+$event-list-item-cover-size: 74px;
+$event-list-item-padding: 14px; // top and bottom
+$event-list-item-cover-content-padding: 12px; // horizontal space between cover and content
+
+$max-page-width: 800px;
+
+$image-list-padding: 12px;
+$image-list-padding-horizontal: $image-list-padding / 3;
+$image-list-padding-vertical: $image-list-padding / 3;
+
+// 新的规范,列高
+$row-height-1: 45px;
+$row-height-2: 55px;
+$row-height-3: 60px;

@@ -1,0 +1,156 @@
+@import '../common/variables';
+@import '../common/mixins';
+@import '../common/base-page';
+
+.rel-list {
+  margin-left: 14px;
+  display: block;
+}
+
+.rel-item {
+  display: inline-block;
+  width: 100%;
+  padding: $event-list-item-padding $edge-padding $event-list-item-padding 0;
+  box-sizing: border-box;
+
+  @include sub-pixel-border($border-color, 'bottom');
+
+  .rel-item-cover {
+    width: $event-list-item-cover-size;
+    height: $event-list-item-cover-size;
+    float: left;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+    }
+  }
+
+  .rel-item-content {
+    width: auto;
+    overflow: hidden;
+    height: $event-list-item-cover-size;
+    padding-left: $event-list-item-cover-content-padding;
+    position: relative;
+
+    > p {
+      margin: 0;
+    }
+
+    .rel-item-title {
+      line-height: 1.2em;
+      height: 2.4em;
+      overflow: hidden;
+    }
+
+    // css for the second and third items.
+    .rel-item-org-info {
+      overflow: hidden;
+      height: 20px;
+
+      .rel-item-org-image {
+        position: relative;
+        width: 20px;
+        height: 100%;
+        float: left;
+        margin-right: 4px;
+        margin-top: 2px;
+
+        .rel-item-org-avatar {
+          width: 16px;
+          height: 16px;
+          background: center/cover no-repeat;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+
+        .rel-item-org-avatar-vip {
+          width: 8px;
+          height: 8px;
+          @include icon(url(images/vip.png));
+          position: absolute;
+          right: 0;
+          bottom: 2px;
+        }
+      }
+    }
+
+    .rel-item-organizer {
+      line-height: 1.2em;
+      margin-top: 6px;
+      font-size: 11px;
+      color: $color-text-light-gray;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .rel-item-statistics {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding-left: $event-list-item-cover-content-padding;
+      box-sizing: border-box;
+      width: 100%;
+      line-height: 1;
+      font-size: 11px;
+      color: $color-text-gray;
+
+      .rel-item-statistics-left {
+        float: left;
+
+        .rel-item-city-icon {
+          @include icon(url('images/event-city.png'));
+        }
+
+        .rel-item-time-icon-no-margin {
+          @include icon(url('images/event-begin-time.png'));
+        }
+
+        .rel-item-time-icon {
+          @include icon(url('images/event-begin-time.png'));
+          margin-left: 12px;
+        }
+
+        .rel-item-city {
+          width: 4em;
+        }
+
+        i {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          vertical-align: middle;
+        }
+
+        span {
+          margin-left: 4px;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          vertical-align: middle;
+          height: 1em;
+          white-space: nowrap;
+        }
+      }
+
+      .rel-item-statistics-right {
+        width: auto;
+        overflow: hidden;
+        text-align: right;
+        position: relative;
+        top: 1px;
+
+        .rel-item-signup-count {
+          color: $color-text-assertive;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}
+

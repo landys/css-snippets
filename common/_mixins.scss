@@ -1,0 +1,109 @@
+@import 'variables';
+
+@mixin icon($image-url, $active-image-url:none) {
+  background-image: $image-url;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  @if $active-image-url != none {
+    &:active {
+      background-image: $active-image-url;
+    }
+  }
+}
+
+@mixin background-img($image-url) {
+  background-image: $image-url;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin fixed-radio-image($heightWidthRadio, $imgUrl) {
+  height: auto;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-top: $heightWidthRadio;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: $imgUrl;
+  }
+}
+
+@mixin sub-pixel-border($color, $side: 'all') {
+  $border: border-#{$side};
+
+  @if $side == 'all' {
+    $border: border;
+  }
+
+  position: relative;
+
+  &:before {
+    content: '';
+    #{$border}: 1px solid $color;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+  }
+}
+
+@mixin clear-float {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin center-align($horizontal: true, $vertical: true) {
+  position: absolute;
+  $translateX: 0;
+  $translateY: 0;
+  @if $horizontal {
+    left: 50%;
+    $translateX: -50%;
+  }
+  @if $vertical {
+    top: 50%;
+    $translateY: -50%;
+  }
+  transform: translate($translateX, $translateY);
+}
+
+@mixin after-base($set-full-size: false) {
+  content: '';
+  display: block;
+  position: absolute;
+  @if $set-full-size {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin height-and-line-height($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin constraint-width-and-center {
+  max-width: $max-page-width;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

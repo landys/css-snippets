@@ -1,3 +1,6 @@
 .idea
 .DS_Store
 *.orig
+*.css
+*.css.map
+.sass-cache
