@@ -7,6 +7,11 @@
   display: block;
 }
 
+.rel-item-link {
+  text-decoration: none;
+  color: $color-text-dark;
+}
+
 .rel-item {
   display: inline-block;
   width: 100%;
