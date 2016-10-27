@@ -1,0 +1,70 @@
+#set($categoryCount = $!categories.size())
+#set($rowCount = ($categoryCount + 3) / 4)
+#set($start = 0)
+#set($end = $rowCount - 1)
+#set($rowRange = [$start..$end])
+#set($colRange = [0..3])
+<div class="orgs-categories">
+    #foreach($i in $rowRange)
+    <div class="orgs-categories-row">
+        #foreach($j in $colRange)
+        #set($index = $i * 4 + $j)
+        #if($index < $categoryCount)
+        #set($category = $!categories[$index])
+        <div class="orgs-categories-col"><div class="category-item-content"><a href="/school/$!school/orgs?category=$category.id">
+            <div class="category-img">
+                #if($!category.icon)
+                <div style="background-image: url($!category.icon)" class="category-icon category-icon-img"><div>&nbsp;</div></div>
+                #else
+                <div style="background-color: $!date.colorToCssString($!category.color)" class="category-icon"><div>$!category.title.substring(0, 1)</div></div>
+                #end
+            </div>
+            <div class="category-title">$category.title</div>
+        </a></div></div>
+        #end
+        #end
+    </div>
+    #end
+</div>
+
+#*
+Data structure for categories.
+categories: [
+    {
+        id: 3,
+        title: "创新创业",
+        icon: "http://static.51bmb.com/category/innovation.png",
+        color: 0
+    },
+    {
+        id: 4,
+        title: "体育文化",
+        icon: "http://static.51bmb.com/category/sport.png",
+        color: 0
+    },
+    {
+        id: 5,
+        title: "志愿公益",
+        icon: "http://static.51bmb.com/category/volunteer.png",
+        color: 0
+    },
+    {
+        id: 19,
+        title: "玩",
+        icon: null,
+        color: 9761535
+    },
+    {
+        id: 23,
+        title: "游戏",
+        icon: null,
+        color: 16758405
+    },
+    {
+        id: 2147483647,
+        title: "其他",
+        icon: "http://static.51bmb.com/category/others.png",
+        color: 0
+    }
+]
+*#
